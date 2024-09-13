@@ -1,0 +1,32 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model deck {
+  id Int @id @default(autoincrement())
+  commander String @unique
+  cardtext String
+  lands Int
+  zerocmc Int @default(0)
+  onecmc Int @default(0)
+  twocmc Int @default(0)
+  threecmc Int @default(0)
+  fourcmc Int @default(0)
+  fivecmc Int @default(0)
+  sixcmc Int @default(0)
+  sevencmc Int @default(0)
+  eightpluscmc Int @default(0)
+  white Int @default(0)
+  blue Int @default(0)
+  black Int @default(0)
+  red Int @default(0)
+  green Int @default(0)
+}
